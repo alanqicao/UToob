@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :set_user, only: [:edit, :update, :destroy]
+  
   # def index
   # end
 
@@ -10,19 +11,28 @@ class UsersController < ApplicationController
   # end
 
   def edit
-    @user 
+    #Before Action
   end
 
   def update
+    #Before Action
+    if user.update(user_params)
+      redirect_to movie_path
+    end
   end
 
   def destroy
+    #Before Action
   end
 
   private
 
   def set_user
-    @user = User.find(user_params)
+    @user = User.find(user_params[:id])
   end
-  
+
+  def user_params
+    params.require(:user).permit(:email)
+  end
+
 end

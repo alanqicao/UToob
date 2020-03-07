@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  #set_movie is private method that loads in called index automatically
  
+
+
   def index
     @movies = Movie.all
   end
@@ -11,7 +12,7 @@ class MoviesController < ApplicationController
   end
   
  def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movies.new(movie_params)
     if @movie.save
       redirect_to movies_path
     else
@@ -28,7 +29,6 @@ class MoviesController < ApplicationController
  end
   
  def update
-    @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
       redirect_to movies_path
     else
@@ -44,11 +44,11 @@ class MoviesController < ApplicationController
  private
   def movie_params
     params.require(:movie).permit(:title, :duration, :genre, :description, :trailer)
-   
   end
   
  def set_movie
     @movie = Movie.find(params[:id])
   end
+
  end
  
