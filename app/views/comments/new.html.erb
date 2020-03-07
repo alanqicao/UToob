@@ -1,2 +1,10 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h1>Post Comment</h1>
+
+<hr />
+<%= form_for [@movie, @comment] do |f| %>
+<%= f.label "Enter Comment"%>
+<%= f.text_field :body, required: true, autofocus: true %>
+
+
+<%= f.submit%>
+<% end %>

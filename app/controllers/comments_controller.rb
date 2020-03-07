@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_movie
   before_action :set_user, only: [:new, :create, :update]
   def index
-    @comments = @movie.comments.all
+    @comments = Comment.all
   end
 
   def new
@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @movie.comments.new(comment_params)
+    @comment = @movie.comments.create(comment_params)
     if @comment.save
       redirect_to movie_path(@movie)
     else
@@ -37,14 +37,14 @@ class CommentsController < ApplicationController
   end
 
   def show
-   @user = current_user
-  #  @comment= Comment.find(params[:id])
+   # movie by before_action
+   @comment = Comment.find(params[:id])
   end
 
   private
 
   def set_user
-    @user = current_user.name
+    @user = current_user
   end
 
   def set_movie
@@ -52,7 +52,11 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body).merge(user_id: current_user.id)
   end
 
+end
+
+def set_list
+  @list = @board.lists.find(params[:id])
 end
