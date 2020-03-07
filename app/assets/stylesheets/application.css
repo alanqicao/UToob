@@ -78,10 +78,29 @@ navbar margins
 movies index
 **********/
 .movie-con {
-    display: inline-block;
-    margin: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .plus {
     margin-right: 10px;
+}
+
+.movie-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 45px;
+    margin-top: 20px;
+}
+
+.icon {
+    margin-right: 20px;
 }
