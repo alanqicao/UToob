@@ -1,2 +1,10 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<h1>Edit Comment</h1>
+<hr />
+<%= form_for [@movie, @comment] do |f| %>
+<%= f.label "Update Comment"%>
+<%= f.label %>
+<%= f.text_field :body, required: true, autofocus: true, placeholder: "Revise Comment" %>
+
+
+<%= f.submit%>
+<% end %>

@@ -21,7 +21,7 @@
 <p><%= @movie.trailer%></p>
 
 <% @movie.comments.each do |comment|%>
-<%= comment.body%>
+<%= link_to comment.body, movie_comment_path(@movie)%>
 <%= comment.user_id%>
 <% end %>
 

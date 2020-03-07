@@ -18,6 +18,7 @@
 
  * {
     font-family: 'Roboto', sans-serif;
+    color: rgb(184, 0, 197);
  }
 
  body {
@@ -27,7 +28,6 @@
     width: 30px;
     margin: 50px auto;
 }
-
 
 .has-search .form-control {
     padding-left: 2.375rem;
