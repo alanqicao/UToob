@@ -81,3 +81,7 @@ movies index
     display: inline-block;
     margin: 40px 20px;
 }
+
+.plus {
+    margin-right: 10px;
+}
