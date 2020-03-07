@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
  end
   
  def edit
-  if @movie.user_id == 0 || @movies.user_id == nil
+  if @movie.current_user.id == 0 || @movies.current_user.id == nil
     redirect_to movies_path
   else
     set_movie
