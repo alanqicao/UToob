@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_movie
   before_action :set_user, only: [:new, :create, :update]
   def index
-    @comments = Comment.all
+    @comments = @movie.comments.all
   end
 
   def new
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
 
   def show
    # movie by before_action
-   @comment = Comment.find(params[:id])
+   @comment = Comment.find(params[:movie_id])
   end
 
   private
@@ -55,8 +55,4 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body).merge(user_id: current_user.id)
   end
 
-end
-
-def set_list
-  @list = @board.lists.find(params[:id])
 end
