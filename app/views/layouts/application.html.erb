@@ -16,7 +16,13 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
+<<<<<<< HEAD
     
+=======
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+>>>>>>> a1ffab9719eb6bb0be2ac139a7174ca26b1e752c
     <%= yield %>
     </div>
   </body>

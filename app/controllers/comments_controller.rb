@@ -19,11 +19,11 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
+    @comment = @movie.comments.find(params[:id])
   end
 
   def update
-    @comment = Comment.find(params[:id])
+    @comment = @movie.commentes.find(params[:id])
     if @comment.update(comment_params)
       redirect_to movie_path(@movie)
     else
