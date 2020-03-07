@@ -27,6 +27,8 @@ class MoviesController < ApplicationController
  def edit
   if @movie.user_id == current_user.id
     set_movie
+  elsif current_user.try(:admin?)
+    set_movie
   else
     redirect_to movies_path
   end
@@ -44,6 +46,9 @@ end
   
  def destroy
   if @movie.user_id == current_user.id
+    @movie.destroy
+    redirect_to movies_path
+  elsif current_user.try(:admin?)
     @movie.destroy
     redirect_to movies_path
   else
