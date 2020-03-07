@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  #set_movie is private method that loads in called index automatically
  
+
+
   def index
     @movies = Movie.all
   end
@@ -50,5 +51,6 @@ class MoviesController < ApplicationController
  def set_movie
     @movie = Movie.find(params[:id])
   end
+
  end
  
