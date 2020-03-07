@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :update, :destroy]
+  before_action :set_movie, only: [:show, :edit, :update, :destroy]
  
 
 
@@ -14,10 +14,8 @@ class MoviesController < ApplicationController
  def create
     @movie = current_user.movies.new(movie_params)
     if @movie.save
-      # flash[:success] = "Movie Created"
       redirect_to movies_path
-    else
-      # flash[:error] = "Error #{@movie.errors.full_messages.join('\n')}"
+    else    
       render :new
     end
   end
@@ -27,10 +25,10 @@ class MoviesController < ApplicationController
  end
   
  def edit
-  if @movie.current_user.id == 0 || @movies.current_user.id == nil
-    redirect_to movies_path
-  else
+  if @movie.user_id == current_user.id
     set_movie
+  else
+    redirect_to movies_path
   end
 end
 
@@ -45,9 +43,13 @@ end
   end
   
  def destroy
+  if @movie.user_id == current_user.id
     @movie.destroy
     redirect_to movies_path
+  else
+    redirect_to movies_path
   end
+end
   
  private
   def movie_params
@@ -56,7 +58,7 @@ end
   
  def set_movie
     @movie = Movie.find(params[:id])
-  end
-
  end
+
+end
  

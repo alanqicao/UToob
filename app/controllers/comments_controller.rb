@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
     end
   end
 
+
   def edit
     @comment = @movie.comments.find(params[:id])
   end
@@ -38,7 +39,7 @@ class CommentsController < ApplicationController
 
   def show
    # movie by before_action
-   @comment = Comment.find(params[:movie_id])
+   @comment = @movie.comments.find(params[:id])
   end
 
   private
@@ -52,7 +53,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body).merge(user_id: current_user.id)
+    params.require(:comment).permit(:body).merge(user_id: current_user.id, movie_id: @movie)
   end
 
 end
