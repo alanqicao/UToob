@@ -58,7 +58,7 @@ navbar margins
 
 
 .logo-margin {
-    margin-right: 250px;
+    margin-right: 150px;
 
 }
 
@@ -67,5 +67,17 @@ navbar margins
 }
 
 .account-margin {
-    margin-left: 300px;
+    margin-left: 250px;
+}
+
+.camra-margin {
+    margin-right: 20px;
+}
+
+/***********
+movies index
+**********/
+.movie-con {
+    display: inline-block;
+    margin: 40px 20px;
 }

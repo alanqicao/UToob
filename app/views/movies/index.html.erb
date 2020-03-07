@@ -1,11 +1,22 @@
 <%= link_to 'Create New Movie', new_movie_path %>
 <h1>Movies:</h1>
-<hr/>
+
 <ul>
   <% @movies.each do |movie| %>
+<<<<<<< HEAD
     <li>
       <%= link_to movie.title, movie %>
     </li>
     
+=======
+  <div class="movie-con">
+      <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to movie.title, movie %></h5>
+          </div>
+      </div>
+    </div>
+>>>>>>> 2fda596429c39e535cfc96c3a4c6c08d482a17fa
 <% end %>
 </ul>
