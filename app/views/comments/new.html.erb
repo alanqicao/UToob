@@ -1,10 +1,12 @@
 <h1>Post Comment</h1>
-
+ 
 <hr />
+<div class = "form-group">
 <%= form_for [@movie, @comment] do |f| %>
-<%= f.label "Enter Comment"%>
-<%= f.text_field :body, required: true, autofocus: true %>
+
+<%= f.text_field :body, placeholder: "Enter Comment",  required: true, autofocus: true, class: "form-control"  %>
 
 
 <%= f.submit%>
 <% end %>
+</div>
