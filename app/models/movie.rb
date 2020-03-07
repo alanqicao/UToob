@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-  has_many :comments, through: :users
+  has_many :comments
 end

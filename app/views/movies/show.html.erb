@@ -18,6 +18,10 @@
 <p><%= @movie.description%></p>
 <p><%= @movie.trailer%></p>
 
+<% @movie.comments.each do |comment|%>
+<%= comment.body%>
+<%= comment.user_id%>
+<% end %>
 
 
 
