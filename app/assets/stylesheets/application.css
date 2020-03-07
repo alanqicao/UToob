@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import "flash";
+
  * {
     font-family: 'Roboto', sans-serif;
  }
