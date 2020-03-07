@@ -104,3 +104,19 @@ movies index
 .icon {
     margin-right: 20px;
 }
+
+/***********
+movies show
+**********/
+
+.movie-show-con {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.movie-row {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+}
