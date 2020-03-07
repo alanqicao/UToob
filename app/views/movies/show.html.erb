@@ -24,19 +24,3 @@
 </div>
 </div>
  
-
-<<<<<<< HEAD
-=======
-<h3><%= @movie.title%></h3>
-<h5><%= @movie.genre%></h5>
-<p><%= @movie.description%></p>
-<p><%= @movie.trailer%></p>
-
-<% @movie.comments.each do |comment|%>
-<%= link_to comment.body, movie_comment_path(@movie, comment)%>
-<%= comment.user_id%>
-<% end %>
-
-
-
->>>>>>> 7e9ff6b0301fbcfa21f533de4bfdeb0b568385f2
