@@ -23,6 +23,7 @@
 
 <% @movie.comments.each do |comment|%>
 <%= link_to comment.body, movie_comment_path(@movie)%>
+<%= link_to 'delete comment', movie_comment_path(@movie), method: :destroy %>
 <%= comment.user_id%>
 <% end %>
 
