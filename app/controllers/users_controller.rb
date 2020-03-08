@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
   
-  # def index
-  # end
+  def index
+  end
 
-  # def show
-  # end
+  def show
+  end
 
-  # def new
-  # end
+  def new
+  end
 
   def edit
     #Before Action
