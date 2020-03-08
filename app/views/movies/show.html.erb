@@ -13,7 +13,7 @@
         <div class="card-body">
             <p class="card-text"><%= link_to comment.body, movie_comment_path(@movie)%></p>
             <div href="#" class="btn btn-outline-secondary"><%= link_to 'edit comment', edit_movie_comment_path(@movie,comment) %></div>
-            <div href="#" class="btn btn-outline-secondary"><%= link_to 'delete comment', movie_comment_path(@movie, comment), method: :destroy %></div>
+            <div href="#" class="btn btn-outline-secondary"><%= link_to 'delete comment', movie_comment_path(@movie, comment), method: :delete %></div>
         </div>
   </div>
    

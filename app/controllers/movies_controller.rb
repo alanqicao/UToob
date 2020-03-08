@@ -65,5 +65,9 @@ end
     @movie = Movie.find(params[:id])
  end
 
+ def sort
+  Movie.alphabetize
+ end
+
 end
  

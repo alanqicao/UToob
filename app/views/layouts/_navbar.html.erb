@@ -9,6 +9,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
+          
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -36,12 +37,14 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
             <a class="nav-link d-flex justify-content-end" href="/users/edit"><i class="fa fas fa-user-circle fa-2x account-margin"></i><span class="sr-only">(current)</span></a>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+
         </li>
     </ul>
   </div>
       <% else %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto"> 
                 <li class="nav-item active">
                 <li class="nav-item active">
                     <a class="nav-link d-flex justify-content-end" href="#"><i class="fa fas fa-sign-in-alt fa-2x"></i><span class="sr-only">(current)</span></a>
@@ -49,6 +52,7 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link d-flex justify-content-end" href="/users/sign_in"><i class="fa fas fa-user-plus fa-2x"></i></i><span class="sr-only">(current)</span></a>
+                  
                 </li>
             </ul>
          </div>
