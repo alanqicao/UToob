@@ -18,8 +18,37 @@
 
  * {
     font-family: 'Roboto', sans-serif;
-    color: rgb(184, 0, 197);
  }
+
+ h1 {
+     color: white
+ }
+
+ h2 {
+    color: white
+}
+h3 {
+    color: white
+}
+h4 {
+    color: white
+}
+h5 {
+    color: white
+}
+
+a {
+ color: white;
+ text-decoration: none;
+ transition: all ease-in-out .2s;
+}
+
+a:hover{
+    color:rgb(61, 61, 61);
+}
+
+
+
 
  body {
      background:#181818;
@@ -86,6 +115,7 @@ movies index
 
 .plus {
     margin-right: 10px;
+    color: rgb(79, 91, 250);
 }
 
 .movie-column {
@@ -103,4 +133,20 @@ movies index
 
 .icon {
     margin-right: 20px;
+}
+
+/***********
+movies show
+**********/
+
+.movie-show-con {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.movie-row {
+    display: flex;
+    justify-content: row;
+    align-items: center;
 }

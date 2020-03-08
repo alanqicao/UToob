@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_movie
-  before_action :set_user, only: [:new, :create, :update]
+ 
   def index
     @comments = @movie.comments.all
   end
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment = @movie.commentes.find(params[:id])
+    @comment = @movie.comments.find(params[:id])
     if @comment.update(comment_params)
       redirect_to movie_path(@movie)
     else
@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body).merge(user_id: current_user.id, movie_id: @movie)
+    params.require(:comment).permit(:body).merge(user_id: current_user.id)
   end
 
 end

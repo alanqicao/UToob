@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "movies#index"
+  get 'static_pages/index'
+  root "static_pages#index"
   devise_for :users
 
   resources :users

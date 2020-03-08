@@ -1,10 +1,12 @@
 <h1>Edit Comment</h1>
 <hr />
+<div class = "form-group">
 <%= form_for [@movie, @comment] do |f| %>
-<%= f.label "Update Comment"%>
-<%= f.label %>
-<%= f.text_field :body, required: true, autofocus: true, placeholder: "Revise Comment" %>
+
+
+<%= f.text_field :body, required: true, autofocus: true, placeholder: "Revise Comment", class: "form-control"  %>
 
 
 <%= f.submit%>
 <% end %>
+</div>

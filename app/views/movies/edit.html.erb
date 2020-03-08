@@ -1,10 +1,3 @@
-
-<%# need an if loop for if user_id !== current_user.user_id then they are sent back to the movies page else, form_with %>
 <h1> Edit Movie! </h1><br/>
 <p> Note: you can only edit a movie you created. </p>
-<%=  render partial: "form" %>%
-<%# <% if movie.user_id == current_user.user_id %>
-  <%# <%=  render partial: "form" %> %>
-<%# <%= else %> %>
-  <%# <% redirect_to movies_path%> %>
-<%# <% end %> %> %>
+<%=  render partial: "form" %>

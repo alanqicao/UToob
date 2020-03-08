@@ -1,31 +1,26 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <%= link_to 'Go Back', movies_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to 'New Comment', new_movie_comment_path(@movie), class: "nav-link" %>
-      </li>
-    </ul>
+<div class="movie-show-con">
+<div>
+    <iframe width="800" height="450" src="<%= @movie.trailer%>" frameborder="0" allowfullscreen></iframe>
+    <h2><%= @movie.title%></h2>
+    <h5><%= @movie.genre%></h5>
+    <div class="btn btn-outline-secondary"><%= link_to 'Edit Movie', edit_movie_path %></div>
+    <div class="btn btn-outline-secondary"><%= link_to 'Delete Movie - can only delete a movie you made', movie_path, method: :delete %></div>
+</div>
+<div>
+    <% @movie.comments.each do |comment|%>
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">User:<%= current_user.user_name%></div>
+        <div class="card-body">
+            <p class="card-text"><%= link_to comment.body, movie_comment_path(@movie)%></p>
+            <div href="#" class="btn btn-outline-secondary"><%= link_to 'edit comment', edit_movie_comment_path(@movie,comment) %></div>
+            <div href="#" class="btn btn-outline-secondary"><%= link_to 'delete comment', movie_comment_path(@movie, comment), method: :destroy %></div>
+        </div>
   </div>
-</nav>
-
-<%= link_to 'Edit Movie', edit_movie_path %>
-<%= link_to 'Delete Movie - can only delete a movie you made', movie_path, method: :delete %>
+   
+    <% end %>
+    <div class="movie-row">
+    <i class="fa far fa-plus plus"></i><%= link_to 'New Comment', new_movie_comment_path(@movie), class: "nav-link" %>
+    </div>
+</div>
+</div>
  
- 
-
-<h3><%= @movie.title%></h3>
-<h5><%= @movie.genre%></h5>
-<p><%= @movie.description%></p>
-<p><%= @movie.trailer%></p>
-
-<% @movie.comments.each do |comment|%>
-<%= link_to comment.body, movie_comment_path(@movie)%>
-<%= link_to 'delete comment', movie_comment_path(@movie), method: :destroy %>
-<%= comment.user_id%>
-<% end %>
-
-
-
